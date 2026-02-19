@@ -13,3 +13,5 @@ Persistencia: Retrofit,OkHttp,Kotlinx Serialization,Room y DataStore(offline fir
 Control de estados: stateFlow y sharedFlow.
 Seguridad: encrypted datastore
 Testing: JUnit y MockK,Compose Testing,CI/CD,Turbine.
+
+Paginación,test ingregación
