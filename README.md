@@ -1,2 +1,15 @@
-# Karma-card
-App para gestionar un carnet por puntos conductual en el ámbito familiar,amigos.
+Proyecto colaborativo: @fornieDev y 
+
+Tecnologías:
+
+IDE: Android Studio
+Lenguaje: Kotlin (sealed class, flow, extension functiones,result pattern)
+Arquitectura: Clean Architecture,MVVM,Multi-module
+Estructura de archivos:
+Dependencias: Dagger Hilt
+UI: Jetpack Compose (Material 3, navigation compose, state hoisting, UI State pattern)
+Concurrencia: dispatcher injection.
+Persistencia: Retrofit,OkHttp,Kotlinx Serialization,Room y DataStore(offline first),Workmanager y corrutinas
+Control de estados: stateFlow y sharedFlow.
+Seguridad: encrypted datastore
+Testing: JUnit y MockK,Compose Testing,CI/CD,Turbine.
