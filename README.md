@@ -15,3 +15,19 @@ Seguridad: encrypted datastore
 Testing: JUnit y MockK,Compose Testing,CI/CD,Turbine.
 
 Paginación,test ingregación
+
+Android Studio
+Kotlin
+MVVM
+Clean architecture
+Jetpack compose
+Retrofit
+Room
+DataStore
+Encrypted datastore
+Springboot
+Corrutinas
+JUnit
+CI/CD
+
+
