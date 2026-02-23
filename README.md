@@ -8,27 +8,27 @@ Karma card es una app nativa Android que sirve para establecer unas normas de ca
 
 ## 🛠️ Tecnologías:
 
-### IDE:
+### 🖥️ IDE:
 -Android Studio
-### Lenguaje:
+### 💻 Lenguaje:
 -Kotlin (sealed class, flow, extension functiones,result pattern).
-### Arquitectura:
+### 🏗️ Arquitectura:
 -MVVM,Clean architecture,multimodule.
-### Dependencias:
+### 🔧 Dependencias:
 -Dagger Hilt.
-### UI:
+### 🎨 UI:
 -Jetpack compose(Material 3, navigation compose, state hoisting, UI State pattern).
-### Persistencia:
+### 🗄️ Persistencia:
 -Room(offlinea first),DataStore,Encrypted datastore,Retrofit,OkHttp,Kotlinx Serialization,Workmanager,paginación.
-### Concurrencia:
+### ⏱️ Concurrencia:
 -corrutines,dispatcher injection.
-### Control de estados: 
+### 🔄 Control de estados: 
 -stateFlow y sharedFlow.
-### Manejo de errores:
+### ⚠️ Manejo de errores:
 sin try cath con sealed class o ...
-### Testing: 
+### 🧪 Testing: 
 -JUnit,MockK,Compose Testing,CI/CD,Turbine,test de integración.
-### Backend:
+### 🌐 Backend:
 -Springboot,PostgreSQL.
 
 ## 📂 Estructura del proyecto:
