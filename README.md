@@ -66,6 +66,49 @@ sin try cath con sealed class o ...
 ### feature-home
 ### feature-dashboard
 
+📁 app
+
+📁 core
+    📄 logger
+    📄 errorHandler
+    📄 network
+
+📁 data
+    📁 local
+    📁 remote
+    📄 repository implementations
+    📄 mapper
+
+📁 domain
+    📄 model
+    📄 repository interfaces
+    📄 usecase
+
+📁 design-system
+    📄 colors
+    📄 themes
+    📄 fonts
+    📄 components
+
+📁 ui
+    📄 view
+    📄 viewmodel
+    📄 state
+    📄 event
+
+📁 feature-splash
+    📄 splashView
+    📄 splashViewModel
+    📄 splashUIState
+    📄 spashEvent
+    📄 splashNavigation
+
+📁 feature-login
+
+📁 feature-home
+
+📁 feature-dashboard
+
 
 
 
