@@ -1,6 +1,12 @@
-Proyecto colaborativo:  @yazmi y @fornieDev.
+Qué es Karma Card:
 
-Tecnologías:
+Karma card es una app nativa Android que sirve para establecer unas normas de casa con los hijos y penalizaciones por puntos,pudiendo notificar cualquier infracción y descontando puntos (como un carnet por puntos de comportamiento).De igual manera,se pueden establecer requisitos para ciertas actividades (por ejemplo,jugar a la consolo necesitas un saldo de al menos 6 puntos).También se deben establecer sistemas de obtención de puntos para recuperar los puntos perdidos.
+
+## 👨‍💻 Autores (proyecto colaborativo)
+- [@fornieDev](https://github.com/fornieDev)
+-
+
+## 🛠️ Tecnologías:
 
 IDE:Android Studio.
 Lenguaje:Kotlin (sealed class, flow, extension functiones,result pattern).
@@ -14,7 +20,7 @@ Manejo de errores sin try cath con sealed class o ...
 Testing: JUnit,MockK,Compose Testing,CI/CD,Turbine,test de integración.
 Backend:Springboot,PostgreSQL.
 
-Estructura del proyecto:
+## 📂 Estructura del proyecto:
 app
 core
   logger
@@ -50,9 +56,7 @@ feature-home
 feature-dashboard
 
 
-Qué es Karma Card:
 
-Karma card es una app nativa Android que sirve para establecer unas normas de casa con los hijos y penalizaciones por puntos,pudiendo notificar cualquier infracción y descontando puntos (como un carnet por puntos de comportamiento).De igual manera,se pueden establecer requisitos para ciertas actividades (por ejemplo,jugar a la consolo necesitas un saldo de al menos 6 puntos).También se deben establecer sistemas de obtención de puntos para recuperar los puntos perdidos.
 
 
 
