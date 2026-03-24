@@ -32,82 +32,40 @@ sin try cath con sealed class o ...
 -Springboot,PostgreSQL.
 
 ## 📂 Estructura del proyecto:
-### app
-### core
-  logger
-  errorHandler
-  network
-### data
-  local
-  remote
-  repository implementations
-  mapper
-### domain
-  model
-  repository interfaces
-  usecase
-### design-system
-  colors
-  themes
-  fonts
-  components
-### ui
-  view
-  viewmodel
-  state
-  event
-### feature-splash
-  splashView
-  splashViewModel
-  splashUIState
-  spashEvent
-  splashNavigation
-### feature-login
-### feature-home
-### feature-dashboard
 
-📁 app
+myapp/
+│
+├── ui/
+│   ├── view/
+│   │   ├── activities/
+│   │   └── screens/
+│   │
+│   ├── viewmodel/
+│   │
+│   └── state?/
+│
+├── domain/
+│   ├── model/
+│   │
+│   ├── repositoryInt/
+│   │
+│   └── usecase/
+│
+├── data/
+│   ├── repositoryImp/
+│   │
+│   ├── mapper/
+│   │
+│   └── datasource/
+│       ├── remote/
+│       │
+│       └── local/
+│
+├── di/
+│
+└── core/
+    └── components/
 
-📁 core
-    📄 logger
-    📄 errorHandler
-    📄 network
-
-📁 data
-    📁 local
-    📁 remote
-    📄 repository implementations
-    📄 mapper
-
-📁 domain
-    📄 model
-    📄 repository interfaces
-    📄 usecase
-
-📁 design-system
-    📄 colors
-    📄 themes
-    📄 fonts
-    📄 components
-
-📁 ui
-    📄 view
-    📄 viewmodel
-    📄 state
-    📄 event
-
-📁 feature-splash
-    📄 splashView
-    📄 splashViewModel
-    📄 splashUIState
-    📄 spashEvent
-    📄 splashNavigation
-
-📁 feature-login
-
-📁 feature-home
-
-📁 feature-dashboard
 
 
 
