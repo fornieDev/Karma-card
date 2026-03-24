@@ -33,6 +33,8 @@ sin try cath con sealed class o ...
 
 ## 📂 Estructura del proyecto:
 
+```
+
 myapp/
 │
 ├── ui/
@@ -65,6 +67,8 @@ myapp/
 │
 └── core/
     └── components/
+
+```
 
 
 
