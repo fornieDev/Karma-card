@@ -35,7 +35,7 @@ sin try cath con sealed class o ...
 
 ```
 
-myapp/
+root/
 │
 ├── ui/
 │   ├── view/
@@ -66,7 +66,12 @@ myapp/
 ├── di/
 │
 └── core/
-    └── components/
+    ├── components/
+    │
+    ├── network/
+    │
+    └── error/
+
 
 ```
 
