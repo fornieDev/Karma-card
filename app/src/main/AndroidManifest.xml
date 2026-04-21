@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KarmaCard">
         <activity
-            android:name=".core.ui.view.HomeView"
+            android:name=".ui.view.activities.HomeView"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.KarmaCard">
