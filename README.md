@@ -68,6 +68,8 @@ root/
 └── core/
     ├── components/
     │
+    ├── theme/
+    │
     ├── network/
     │
     └── error/
