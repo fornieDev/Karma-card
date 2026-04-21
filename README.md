@@ -9,7 +9,7 @@ Karma card es una app nativa Android que sirve para establecer unas normas de ca
 ## 🛠️ Tecnologías:
 
 ### 🖥️ IDE:
--Android Studio
+-Android Studio,VS Code.
 ### 💻 Lenguaje:
 -Kotlin (sealed class, flow, extension functiones,result pattern).
 ### 🏗️ Arquitectura:
@@ -29,7 +29,7 @@ sin try cath con sealed class o ...
 ### 🧪 Testing: 
 -JUnit,MockK,Compose Testing,CI/CD,Turbine,test de integración.
 ### 🌐 Backend:
--Springboot,PostgreSQL.
+-Springboot,PostgreSQL,Supabase,Render.
 
 ## 📂 Estructura del proyecto:
 
