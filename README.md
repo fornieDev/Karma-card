@@ -14,6 +14,8 @@ Karma card es una app nativa Android que sirve para establecer unas normas de ca
 -Kotlin (sealed class, flow, extension functiones,result pattern).
 ### 🏗️ Arquitectura:
 -MVVM,Clean architecture.
+### 🔀 Control de versiones:
+-Git, GitFlow.
 ### 🔧 Dependencias:
 -Dagger Hilt.
 ### 🎨 UI:
