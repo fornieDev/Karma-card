@@ -2,8 +2,9 @@ package com.example.karmacard.domain.useCase
 
 import com.example.karmacard.domain.model.Group
 import com.example.karmacard.domain.repositoryInt.GroupRepository
+import javax.inject.Inject
 
-class CreateGroupUseCase(
+class CreateGroupUseCase @Inject constructor(
     private val repository: GroupRepository
 ) {
 

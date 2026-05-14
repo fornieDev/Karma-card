@@ -4,13 +4,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.karmacard.domain.useCase.CreateGroupUseCase
 import com.example.karmacard.domain.useCase.GetGroupsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel(
+@HiltViewModel
+class HomeViewModel @Inject constructor(
     private val createGroupUseCase: CreateGroupUseCase,
-    getGroupsUseCase: GetGroupsUseCase
+    private val getGroupsUseCase: GetGroupsUseCase
 ) : ViewModel() {
 
     val groups = getGroupsUseCase()

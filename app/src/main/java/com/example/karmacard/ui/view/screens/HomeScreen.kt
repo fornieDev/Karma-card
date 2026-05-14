@@ -15,13 +15,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.karmacard.core.components.buttons.AddButton
 import com.example.karmacard.core.components.dialogs.CreateItemDialog
 import com.example.karmacard.ui.viewmodel.HomeViewModel
 
 @Composable
 fun HomeScreen(
-    viewModel: HomeViewModel
+    viewModel: HomeViewModel = hiltViewModel()
 ) {
     val groups by viewModel.groups.collectAsState()
     var showDialog by remember { mutableStateOf(false) }
