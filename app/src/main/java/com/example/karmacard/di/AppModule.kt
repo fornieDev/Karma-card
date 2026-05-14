@@ -26,6 +26,7 @@ object AppModule {
         Room.databaseBuilder(context, AppDatabase::class.java, "app-db").build()
 
     @Provides
+    @Singleton
     fun provideGroupDao(db: AppDatabase): GroupDao = db.groupDao()
 
     @Provides
@@ -37,6 +38,7 @@ object AppModule {
             .build()
 
     @Provides
+    @Singleton
     fun provideGroupApi(retrofit: Retrofit): GroupApi =
         retrofit.create(GroupApi::class.java)
 
