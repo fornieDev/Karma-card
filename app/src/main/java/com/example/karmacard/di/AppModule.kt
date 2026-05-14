@@ -12,6 +12,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
@@ -44,6 +46,16 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideGroupRepository(dao: GroupDao, api: GroupApi): GroupRepository =
-        GroupRepositoryImpl(dao, api)
+    fun provideGroupRepository(dao: GroupDao, api: GroupApi, @IoDispatcher dispatcher: CoroutineDispatcher): GroupRepository =
+        GroupRepositoryImpl(dao, api, dispatcher)
+
+    @Provides
+    @Singleton
+    @IoDispatcher
+    fun provideIoDispatcher(): CoroutineDispatcher = Dispatchers.IO
+
+    @Provides
+    @Singleton
+    @MainDispatcher
+    fun provideMainDispatcher(): CoroutineDispatcher = Dispatchers.Main
 }

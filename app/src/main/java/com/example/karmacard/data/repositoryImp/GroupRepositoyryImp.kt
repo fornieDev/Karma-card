@@ -6,23 +6,28 @@ import com.example.karmacard.data.mapper.toEntity
 import com.example.karmacard.data.dataSource.remote.api.GroupApi
 import com.example.karmacard.domain.model.Group
 import com.example.karmacard.domain.repositoryInt.GroupRepository
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 
 class GroupRepositoryImpl(
     private val dao: GroupDao,
-    private val api: GroupApi
+    private val api: GroupApi,
+    private val dispatcher: CoroutineDispatcher
 ) : GroupRepository {
 
     override suspend fun createGroup(group: Group) {
 
-        // offline-first → guardar primero en Room
-        dao.insertGroup(group.toEntity())
+        withContext(dispatcher) {
+            // offline-first → guardar primero en Room
+            dao.insertGroup(group.toEntity())
 
-        try {
-            //api.createGroup(group.toDto())
-        } catch (e: Exception) {
-            // ignoramos error si no hay internet
+            try {
+                //api.createGroup(group.toDto())
+            } catch (e: Exception) {
+                // ignoramos error si no hay internet
+            }
         }
     }
 
