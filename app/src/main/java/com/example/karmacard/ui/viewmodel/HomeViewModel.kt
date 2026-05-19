@@ -5,7 +5,9 @@ import androidx.lifecycle.viewModelScope
 import com.example.karmacard.domain.useCase.CreateGroupUseCase
 import com.example.karmacard.domain.useCase.GetGroupsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -23,10 +25,13 @@ class HomeViewModel @Inject constructor(
             initialValue = emptyList()
         )
 
+    private val _events = MutableSharedFlow<HomeEvent>()
+    val events = _events.asSharedFlow()
     fun onAddGroupClicked(name: String) {
 
         viewModelScope.launch {
             createGroupUseCase(name)
+            _events.emit(HomeEvent.GroupCreated)
         }
 
     }

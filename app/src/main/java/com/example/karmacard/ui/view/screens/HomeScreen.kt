@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -18,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.karmacard.core.components.buttons.AddButton
 import com.example.karmacard.core.components.dialogs.CreateItemDialog
+import com.example.karmacard.ui.viewmodel.HomeEvent
 import com.example.karmacard.ui.viewmodel.HomeViewModel
 
 @Composable
@@ -26,6 +28,14 @@ fun HomeScreen(
 ) {
     val groups by viewModel.groups.collectAsState()
     var showDialog by remember { mutableStateOf(false) }
+
+    LaunchedEffect(Unit) {
+        viewModel.events.collect { event ->
+            when (event) {
+                is HomeEvent.GroupCreated -> { /* aquí un snackbar por ejemplo */ }
+            }
+        }
+    }
 
     Scaffold(
         floatingActionButton = {
