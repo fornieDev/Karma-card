@@ -15,7 +15,6 @@ import com.example.karmacard.ui.view.screens.HomeScreen
 import com.example.karmacard.ui.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 @AndroidEntryPoint
 class HomeView : ComponentActivity() {
 

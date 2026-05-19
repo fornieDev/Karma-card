@@ -15,8 +15,10 @@ import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
+import kotlinx.serialization.json.Json
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import okhttp3.MediaType.Companion.toMediaType
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -33,11 +35,23 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(): Retrofit =
-        Retrofit.Builder()
+    fun provideRetrofit(): Retrofit {
+
+        val json = Json {
+            ignoreUnknownKeys = true
+            isLenient = true
+            prettyPrint = true
+        }
+
+        return Retrofit.Builder()
             .baseUrl("https://tu-api.com/")
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(
+                json.asConverterFactory(
+                    "application/json".toMediaType()
+                )
+            )
             .build()
+    }
 
     @Provides
     @Singleton

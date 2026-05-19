@@ -7,5 +7,7 @@ plugins {
     //Dagger hilt
     alias(libs.plugins.hilt.android) apply false
     alias(libs.plugins.kotlin.android) apply false
+    //KotlinxSerialization
+    alias(libs.plugins.kotlin.serialization) apply false
 }
 
