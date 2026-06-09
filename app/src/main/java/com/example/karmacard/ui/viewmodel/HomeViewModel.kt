@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import com.example.karmacard.core.result.Result
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
@@ -30,8 +31,17 @@ class HomeViewModel @Inject constructor(
     fun onAddGroupClicked(name: String) {
 
         viewModelScope.launch {
-            createGroupUseCase(name)
-            _events.emit(HomeEvent.GroupCreated)
+
+            when (val result = createGroupUseCase(name)) {
+
+                is Result.Success -> {
+                    _events.emit(HomeEvent.GroupCreated)
+                }
+
+                is Result.Error -> {
+                    _events.emit(HomeEvent.Error(result.error))
+                }
+            }
         }
 
     }

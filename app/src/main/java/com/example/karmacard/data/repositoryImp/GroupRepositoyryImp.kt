@@ -10,6 +10,8 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
+import com.example.karmacard.core.result.Result
+import com.example.karmacard.core.error.toAppError
 
 class GroupRepositoryImpl(
     private val dao: GroupDao,
@@ -17,16 +19,17 @@ class GroupRepositoryImpl(
     private val dispatcher: CoroutineDispatcher
 ) : GroupRepository {
 
-    override suspend fun createGroup(group: Group) {
-
-        withContext(dispatcher) {
-            // offline-first → guardar primero en Room
-            dao.insertGroup(group.toEntity())
+    override suspend fun createGroup(group: Group) : Result <Unit> {
+        return withContext(dispatcher) {
 
             try {
-                //api.createGroup(group.toDto())
+                dao.insertGroup(group.toEntity())
+
+                Result.Success(Unit)
+
             } catch (e: Exception) {
-                // ignoramos error si no hay internet
+
+                Result.Error(e.toAppError())
             }
         }
     }
