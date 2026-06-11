@@ -12,6 +12,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import com.example.karmacard.core.result.Result
 import com.example.karmacard.core.error.toAppError
+import com.example.karmacard.data.mapper.toDto
 
 class GroupRepositoryImpl(
     private val dao: GroupDao,
@@ -23,7 +24,7 @@ class GroupRepositoryImpl(
         return withContext(dispatcher) {
 
             try {
-                dao.insertGroup(group.toEntity())
+                dao.insertGroup(group.toEntity().copy(isSynced = false))
 
                 Result.Success(Unit)
 
@@ -34,15 +35,24 @@ class GroupRepositoryImpl(
         }
     }
 
-    //De momento sólo escritura
-    /*
-    override suspend fun getGroups(): List<Group> {
-        return dao.getGroups().map { it.toDomain() }
-    }
-    */
     override fun getGroups(): Flow<List<Group>> {
         return dao.getGroups().map { list ->
             list.map { it.toDomain() }
+        }
+    }
+
+    override suspend fun syncPendingGroups(): Result<Unit> {
+        return withContext(dispatcher) {
+            try {
+                val pending = dao.getUnsyncedGroups()
+                pending.forEach { entity ->
+                    api.createGroup(entity.toDto())
+                    dao.markAsSynced(entity.id)
+                }
+                Result.Success(Unit)
+            } catch (e: Exception) {
+                Result.Error(e.toAppError())
+            }
         }
     }
 }

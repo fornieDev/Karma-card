@@ -27,3 +27,6 @@ fun GroupDto.toDomain(): Group =
         id = id,
         name = name
     )
+
+fun GroupEntity.toDto(): GroupDto =
+    GroupDto(id = id, name = name)

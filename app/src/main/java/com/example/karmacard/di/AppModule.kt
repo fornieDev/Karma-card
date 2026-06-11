@@ -2,6 +2,7 @@ package com.example.karmacard.di
 
 import android.content.Context
 import androidx.room.Room
+import androidx.work.WorkManager
 import com.example.karmacard.data.dataSource.local.AppDatabase
 import com.example.karmacard.data.dataSource.local.dao.GroupDao
 import com.example.karmacard.data.dataSource.remote.api.GroupApi
@@ -44,7 +45,7 @@ object AppModule {
         }
 
         return Retrofit.Builder()
-            .baseUrl("https://tu-api.com/")
+            .baseUrl("https://tu-api.com/") // hay que cambiar esta url por la real
             .addConverterFactory(
                 json.asConverterFactory(
                     "application/json".toMediaType()
@@ -72,4 +73,9 @@ object AppModule {
     @Singleton
     @MainDispatcher
     fun provideMainDispatcher(): CoroutineDispatcher = Dispatchers.Main
+
+    @Provides
+    @Singleton
+    fun provideWorkManager(@ApplicationContext context: Context): WorkManager =
+        WorkManager.getInstance(context)
 }

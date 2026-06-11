@@ -8,7 +8,7 @@ interface GroupRepository {
 
     suspend fun createGroup(group: Group) : Result<Unit>
 
-    //de momento solo escritura
-    //suspend fun getGroups(): List<Group>
     fun getGroups(): Flow<List<Group>>
+
+    suspend fun syncPendingGroups(): Result<Unit>
 }

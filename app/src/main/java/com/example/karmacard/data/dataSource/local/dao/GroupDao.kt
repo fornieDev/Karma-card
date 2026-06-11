@@ -11,10 +11,12 @@ interface GroupDao {
     @Insert
     suspend fun insertGroup(group: GroupEntity)
 
-    //De momento sólo escritura
-    //@Query("SELECT * FROM groups")
-    //suspend fun getGroups(): List<GroupEntity>
-
     @Query("SELECT * FROM `groups`")
     fun getGroups(): Flow<List<GroupEntity>>
+
+    @Query("SELECT * FROM `groups` WHERE is_synced = 0")
+    suspend fun getUnsyncedGroups(): List<GroupEntity>
+
+    @Query("UPDATE `groups` SET is_synced = 1 WHERE id = :id")
+    suspend fun markAsSynced(id: Long)
 }

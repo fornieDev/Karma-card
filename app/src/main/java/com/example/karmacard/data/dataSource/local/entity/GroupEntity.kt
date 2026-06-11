@@ -7,5 +7,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "groups")
 data class GroupEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    @ColumnInfo(name = "name") val name: String
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "is_synced") val isSynced: Boolean = false
 )

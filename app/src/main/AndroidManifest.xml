@@ -24,6 +24,15 @@
             </intent-filter>
         </activity>
         <!-- Otras Activities -->
+
+        <!-- Desactiva la inicialización automática de WorkManager
+             para que no entre en conflicto con la configuración de Hilt -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="remove" />
+
     </application>
 
 </manifest>
